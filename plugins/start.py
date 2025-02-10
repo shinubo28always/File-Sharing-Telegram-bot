@@ -218,9 +218,12 @@ async def start_command(client: Client, message: Message):
         reply_markup = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("😊 About Me", callback_data="about"),
-                    InlineKeyboardButton("🔒 Close", callback_data="close")
-                ]
+                    InlineKeyboardButton('⚡️ 𝑨𝒏𝒊𝒎𝒆𝒔', url='https://t.me/AniReal_Anime_Zone'),
+                    InlineKeyboardButton('🍁 𝑴𝒐𝒗𝒊𝒆𝒔', url='https://t.me/+zcrkq4o8QIY1Y2E1')
+                ],
+                [
+                    InlineKeyboardButton('🎭𝑼𝒑𝒅𝒂𝒕𝒆 𝑪𝒉𝒂𝒏𝒏𝒆𝒍🍀', url='https://t.me/AniReal_Updates')
+        ]
             ]
         )
         await message.reply_text(
