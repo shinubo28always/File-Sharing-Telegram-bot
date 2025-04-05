@@ -219,7 +219,7 @@ async def start_command(client: Client, message: Message):
             [
                 [
                     InlineKeyboardButton('⚡️ 𝑨𝒏𝒊𝒎𝒆𝒔', url='https://t.me/AniReal_Anime_Zone'),
-                    InlineKeyboardButton('🍁 𝑴𝒐𝒗𝒊𝒆𝒔', url='https://t.me/+zcrkq4o8QIY1Y2E1')
+                    InlineKeyboardButton('♻️ 𝑩𝒂𝒄𝒌-𝑼𝒑', url='https://t.me/+FoIV8U1RmT03NWI1')
                 ],
                 [
                     InlineKeyboardButton('🎭𝑼𝒑𝒅𝒂𝒕𝒆 𝑪𝒉𝒂𝒏𝒏𝒆𝒍🍀', url='https://t.me/AniReal_Updates')
