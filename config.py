@@ -13,11 +13,6 @@ from logging.handlers import RotatingFileHandler
 FORCE_SUB_CHANNEL = int(os.environ.get("FORCE_SUB_CHANNEL", "-1002409521763"))
 FORCE_SUB_CHANNEL2 = int(os.environ.get("FORCE_SUB_CHANNEL2", "-1002299004257"))
 
-if FORCE_SUB_CHANNEL > FORCE_SUB_CHANNEL2:
-    temp = FORCE_SUB_CHANNEL2 
-    FORCE_SUB_CHANNEL2 = FORCE_SUB_CHANNEL
-    FORCE_SUB_CHANNEL = temp
-
 #bot stats
 BOT_STATS_TEXT = os.environ.get("BOTS_STATS_TEXT","<b>BOT UPTIME 🌺</b>\n{uptime}")
 #send custom message when user interact with bot
