@@ -10,6 +10,7 @@ from pyrogram.errors import FloodWait
 from shortzy import Shortzy
 from database.database import user_data, db_verify_status, db_update_verify_status
 
+
 async def is_subscribed(filter, client, update):
     if not FORCE_SUB_CHANNEL:
         return True
@@ -26,7 +27,7 @@ async def is_subscribed(filter, client, update):
     else:
         return True
 
-async def is_subscribed(filter, client, update):
+async def is_subscribed2(filter, client, update):
     if not FORCE_SUB_CHANNEL2:
         return True
     user_id = update.from_user.id
@@ -36,6 +37,11 @@ async def is_subscribed(filter, client, update):
         member = await client.get_chat_member(chat_id = FORCE_SUB_CHANNEL2, user_id = user_id)
     except UserNotParticipant:
         return False
+
+    if not member.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR, ChatMemberStatus.MEMBER]:
+        return False
+    else:
+        return True
 
 async def encode(string):
     string_bytes = string.encode("ascii")
@@ -159,3 +165,4 @@ async def increasepremtime(user_id : int, timeforprem : int):
     await update_verify_status(user_id, is_verified=True, verified_time=time.time()+realtime)
 
 subscribed = filters.create(is_subscribed)
+subscribed2 = filters.create(is_subscribed2)
