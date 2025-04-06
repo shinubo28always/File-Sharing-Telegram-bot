@@ -274,23 +274,30 @@ REPLY_ERROR = """<code>Use this command as a replay to any telegram message with
 
 @Bot.on_message(filters.command('start') & filters.private)
 async def not_joined(client: Client, message: Message):
-    try:
-        invite_link = await client.create_chat_invite_link(int(FORCE_SUB_CHANNEL), creates_join_request=True)
-        invite_link2 = await client.create_chat_invite_link(int(FORCE_SUB_CHANNEL2), creates_join_request=True)
-    except ChatAdminRequired:
-        logger.error("Hey Sona, Ek dfa check kr lo ki auth Channel mei Add hu ya nhi...!")
-        return
-    buttons = [
+    if FORCE_SUB_CHANNEL & FORCE_SUB_CHANNEL2:
+        buttons = [
         [
-            InlineKeyboardButton(text="ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ", url=invite_link.invite_link),
-            InlineKeyboardButton(text="ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ", url=invite_link2.invite_link),
+            InlineKeyboardButton(
+                "Join Channel 👆",
+                url=client.invitelink),
+            InlineKeyboardButton(
+                "Join Channel 👆",
+                url=client.invitelink2),
         ]
     ]
+    elif FORCE_SUB_CHANNEL:
+        buttons = [
+            [
+                InlineKeyboardButton(
+                    "Join Channel 👆",
+                    url=client.invitelink)
+            ]
+        ]
     try:
         buttons.append(
             [
                 InlineKeyboardButton(
-                    text='ʀᴇʟᴏᴀᴅ',
+                    text='Try Again 🥺',
                     url=f"https://t.me/{client.username}?start={message.command[1]}"
                 )
             ]
