@@ -218,8 +218,8 @@ async def start_command(client: Client, message: Message):
         reply_markup = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton('⚡️ 𝑨𝒏𝒊𝒎𝒆𝒔', url='https://t.me/AniReal_Anime_Zone'),
-                    InlineKeyboardButton('♻️ 𝑩𝒂𝒄𝒌-𝑼𝒑', url='https://t.me/+FoIV8U1RmT03NWI1')
+                    InlineKeyboardButton('⚡️ 𝑨𝒏𝒊𝒎𝒆𝒔', url='https://t.me/+5MK9bkIQKt9iOGVl'),
+                    InlineKeyboardButton('♻️ 𝑩𝒂𝒄𝒌-𝑼𝒑', url='https://t.me/+UiL1OtF1JX02Yjhl')
                 ],
                 [
                     InlineKeyboardButton('🎭𝑼𝒑𝒅𝒂𝒕𝒆 𝑪𝒉𝒂𝒏𝒏𝒆𝒍🍀', url='https://t.me/AniReal_Updates')
